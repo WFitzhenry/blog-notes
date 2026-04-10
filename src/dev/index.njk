@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: "Dev"
+permalink: /dev/
+---
+<h2 class="page-title">dev</h2>
+<ul class="collection-list">
+  {% for post in collections.dev %}
+  <li>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    {% if post.templateContent %}
+    <div class="note-body">{{ post.templateContent | safe }}</div>
+    {% endif %}
+    <p class="note-date">{{ post.date | ordinalDate }}</p>
+  </li>
+  {% endfor %}
+</ul>

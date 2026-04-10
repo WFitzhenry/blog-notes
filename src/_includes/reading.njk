@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<article class="reading-entry">
+  <div class="reading-item">
+    {% if thumbnail %}
+    <img class="reading-thumb" src="{{ thumbnail }}" alt="Book cover for {{ title }}" />
+    {% endif %}
+    <div class="reading-meta">
+      <h2 class="reading-title">{{ title }}</h2>
+      <p class="reading-author">{{ author }}</p>
+      {% if rating %}<p class="reading-rating">{{ rating }}</p>{% endif %}
+      <p class="reading-date">{{ date | ordinalDate }}</p>
+    </div>
+  </div>
+
+  <div class="note-body">
+    {{ content | safe }}
+  </div>
+</article>

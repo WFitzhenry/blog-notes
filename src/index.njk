@@ -1,0 +1,49 @@
+---
+layout: base.njk
+permalink: /
+---
+{% for item in collections.feed %}
+  {% set type = item.data.tags %}
+
+  {# ── Photo set ── #}
+  {% if "photos" in type %}
+  <div class="feed-item feed-photos">
+    <a href="{{ item.url }}">{{ item.data.title }}</a>
+    {% if item.data.images %}
+      {% for img in item.data.images %}
+      <img src="{{ img.src }}" alt="{{ img.alt }}" />
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  {# ── Note/dev entry ── #}
+  {% elif "note" in type or "dev" in type %}
+  <div class="feed-item feed-note">
+    <a href="{{ item.url }}">{{ item.data.title }}</a>
+    {% if item.templateContent %}
+    <div class="note-body">{{ item.templateContent | safe }}</div>
+    {% endif %}
+    <p class="note-date">{{ item.date | ordinalDate }}</p>
+  </div>
+
+  {# ── Reading entry ── #}
+  {% elif "reading" in type %}
+  <div class="feed-item feed-reading">
+    <a class="reading-item" href="{{ item.url }}">
+      {% if item.data.thumbnail %}
+      <img class="reading-thumb" src="{{ item.data.thumbnail }}" alt="Book cover for {{ item.data.title }}" />
+      {% endif %}
+      <div class="reading-meta">
+        <span class="reading-title">{{ item.data.title }}</span>
+        <span class="reading-author">{{ item.data.author }}</span>
+        {% if item.data.rating %}<span class="reading-rating">{{ item.data.rating }}</span>{% endif %}
+        <span class="reading-date">{{ item.date | ordinalDate }}</span>
+      </div>
+    </a>
+  </div>
+
+  {% endif %}
+
+{% endfor %}
+
+<div class="divider">⁂</div>

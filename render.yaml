@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: website-note
+    env: static
+    buildCommand: npm run build
+    staticPublishPath: _site

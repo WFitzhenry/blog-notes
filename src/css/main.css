@@ -1,0 +1,258 @@
+/* ── Reset & base ─────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #1a1a1a;
+  background: #fff;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* ── Links ─────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover {
+  opacity: 0.6;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+header {
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4rem;
+}
+
+header h1 a {
+  text-decoration: none;
+}
+
+nav {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
+
+.sep {
+  margin: 0 0.35em;
+  color: #aaa;
+}
+
+/* ── Feed (homepage mixed stream) ──────────────────────── */
+.feed-item {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.feed-item:last-child {
+  border-bottom: none;
+}
+
+/* ── Posts ─────────────────────────────────────────────── */
+article.post h2,
+.feed-item h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-bottom: 0.25rem;
+}
+
+.post-date,
+.date-label {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.75rem;
+}
+
+.post-body,
+.note-body,
+.photo-body {
+  font-size: 1rem;
+}
+
+.post-body p,
+.note-body p,
+.photo-body p {
+  margin-bottom: 1em;
+}
+
+.post-body blockquote,
+.note-body blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  border-left: 2px solid #d0d0d0;
+  color: #555;
+  font-style: italic;
+}
+
+/* ── Book notes ────────────────────────────────────────── */
+.note,
+.feed-note {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-cover {
+  width: 80px;
+  height: auto;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.byline {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #c8a800;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Photos ────────────────────────────────────────────── */
+.feed-photos h2 a,
+.photo-set h2 a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.photo-set img,
+.feed-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.photo-index-thumb {
+  display: block;
+  width: min(100%, 260px);
+  height: auto;
+  margin-top: 0.5rem;
+}
+
+/* ── Collection index pages ────────────────────────────── */
+.collection-list {
+  list-style: none;
+}
+
+.collection-list li {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.collection-list li:last-child {
+  border-bottom: none;
+}
+
+/* ── Reading ───────────────────────────────────────────── */
+.reading-list {
+  list-style: none;
+}
+
+.reading-list li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #efefef;
+}
+
+.reading-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  text-decoration: none;
+}
+
+.reading-thumb {
+  width: 44px;
+  height: auto;
+  flex: 0 0 44px;
+  border-radius: 2px;
+}
+
+.reading-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.reading-title {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.reading-author,
+.reading-date {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.3;
+}
+
+.reading-rating {
+  font-size: 0.85rem;
+  color: #c8a800;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.reading-entry .reading-item {
+  margin-bottom: 1rem;
+}
+
+/* ── Divider ────────────────────────────────────────────── */
+.divider {
+  text-align: center;
+  color: #ccc;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+  body {
+    padding: 1.25rem 1rem 3rem;
+  }
+}

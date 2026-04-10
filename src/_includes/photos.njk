@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+<article class="photo-set">
+  <h2><a href="{{ page.url }}">{{ title }}</a></h2>
+  {% if images %}
+    {% for img in images %}
+    <img src="{{ img.src }}" alt="{{ img.alt }}" />
+    {% endfor %}
+  {% endif %}
+  <div class="photo-body">
+    {{ content | safe }}
+  </div>
+</article>

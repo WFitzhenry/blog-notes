@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<article class="note">
+  <h2><a href="{{ page.url }}">{{ title }}</a></h2>
+  <div class="note-body">
+    {{ content | safe }}
+  </div>
+  <p class="note-date">{{ date | ordinalDate }}</p>
+</article>

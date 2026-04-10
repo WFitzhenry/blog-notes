@@ -1,0 +1,17 @@
+---
+layout: base.njk
+title: "Photos"
+permalink: /photos/
+---
+<h2 class="page-title">photos</h2>
+<ul class="collection-list">
+  {% for set in collections.photos %}
+  <li>
+    <a href="{{ set.url }}">{{ set.data.title }}</a>
+    {% if set.data.images and set.data.images[0] %}
+      {% set preview = set.data.images[0] %}
+      <img class="photo-index-thumb" src="{{ preview.src }}" alt="{{ preview.alt }}" />
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
