@@ -8,12 +8,12 @@
 }
 
 html {
-  font-size: 17px;
+  font-size: 19px;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   color: #1a1a1a;
   background: #fff;
   line-height: 1.6;
@@ -38,9 +38,7 @@ header {
 }
 
 header h1 {
-  font-size: 1rem;
-  font-weight: normal;
-  letter-spacing: 0.02em;
+  font-size: 1.5rem;
   margin-bottom: 0.4rem;
 }
 
@@ -257,7 +255,7 @@ article.post h2,
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 480px) {
   html {
-    font-size: 15px;
+    font-size: 17px;
   }
   body {
     padding: 1.25rem 1rem 3rem;
