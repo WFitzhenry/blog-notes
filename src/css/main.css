@@ -34,7 +34,7 @@ a:hover {
 
 /* ── Header ────────────────────────────────────────────── */
 header {
-  margin-bottom: 3rem;
+  margin-bottom: 2.55rem;
 }
 
 header h1 {
@@ -67,8 +67,8 @@ nav a:hover {
 
 /* ── Feed (homepage mixed stream) ──────────────────────── */
 .feed-item {
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2.55rem;
+  padding-bottom: 2.55rem;
   border-bottom: 1px solid #e8e8e8;
 }
 
