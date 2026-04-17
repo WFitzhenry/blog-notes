@@ -11,6 +11,18 @@ permalink: /dev/
     {% if post.templateContent %}
     <div class="note-body">{{ post.templateContent | safe }}</div>
     {% endif %}
+    {% if post.data.images %}
+      {% for img in post.data.images %}
+      <img class="dev-post-image" src="{{ img.src }}" alt="{{ img.alt }}" />
+      {% endfor %}
+    {% endif %}
+    {% if post.data.image %}
+      {% if post.data.image.src %}
+      <img class="dev-post-image" src="{{ post.data.image.src }}" alt="{{ post.data.image.alt or post.data.title }}" />
+      {% else %}
+      <img class="dev-post-image" src="{{ post.data.image }}" alt="{{ post.data.title }}" />
+      {% endif %}
+    {% endif %}
     <p class="note-date">{{ post.date | ordinalDate }}</p>
   </li>
   {% endfor %}

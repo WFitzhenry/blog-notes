@@ -6,5 +6,17 @@ layout: base.njk
   <div class="note-body">
     {{ content | safe }}
   </div>
+  {% if "dev" in tags and images %}
+    {% for img in images %}
+    <img class="dev-post-image" src="{{ img.src }}" alt="{{ img.alt }}" />
+    {% endfor %}
+  {% endif %}
+  {% if "dev" in tags and image %}
+    {% if image.src %}
+    <img class="dev-post-image" src="{{ image.src }}" alt="{{ image.alt or title }}" />
+    {% else %}
+    <img class="dev-post-image" src="{{ image }}" alt="{{ title }}" />
+    {% endif %}
+  {% endif %}
   <p class="note-date">{{ date | ordinalDate }}</p>
 </article>

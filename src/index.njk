@@ -23,6 +23,18 @@ permalink: /
     {% if item.templateContent %}
     <div class="note-body">{{ item.templateContent | safe }}</div>
     {% endif %}
+    {% if "dev" in type and item.data.images %}
+      {% for img in item.data.images %}
+      <img class="dev-post-image" src="{{ img.src }}" alt="{{ img.alt }}" />
+      {% endfor %}
+    {% endif %}
+    {% if "dev" in type and item.data.image %}
+      {% if item.data.image.src %}
+      <img class="dev-post-image" src="{{ item.data.image.src }}" alt="{{ item.data.image.alt or item.data.title }}" />
+      {% else %}
+      <img class="dev-post-image" src="{{ item.data.image }}" alt="{{ item.data.title }}" />
+      {% endif %}
+    {% endif %}
     <p class="note-date">{{ item.date | ordinalDate }}</p>
   </div>
 

@@ -114,6 +114,13 @@ article.post h2,
   margin-bottom: 1em;
 }
 
+.dev-post-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.75rem;
+}
+
 .post-body blockquote,
 .note-body blockquote {
   margin: 1em 0;
