@@ -162,16 +162,14 @@ article.post h2,
 .feed-photos img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   margin-bottom: 0.5rem;
 }
 
 .photo-index-thumb {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: auto;
   margin-top: 0.5rem;
 }
 

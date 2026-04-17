@@ -5,8 +5,8 @@ permalink: /
 {% for item in collections.feed %}
   {% set type = item.data.tags %}
 
-  {# ── Photo set ── #}
-  {% if "photos" in type %}
+  {# ── Photo/cartoon set ── #}
+  {% if "photos" in type or "cartoon" in type %}
   <div class="feed-item feed-photos">
     <a href="{{ item.url }}">{{ item.data.title }}</a>
     {% if item.data.images %}
