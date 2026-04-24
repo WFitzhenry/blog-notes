@@ -12,8 +12,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("photos", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/photos/*.md").reverse(),
   );
-  eleventyConfig.addCollection("cartoon", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/cartoon/*.md").reverse(),
+  eleventyConfig.addCollection("overherd", (collectionApi) =>
+    collectionApi.getFilteredByGlob("src/overherd/*.md").reverse(),
   );
   eleventyConfig.addCollection("reading", (collectionApi) =>
     collectionApi.getFilteredByGlob("src/reading/*.md").reverse(),
@@ -22,14 +22,14 @@ module.exports = function (eleventyConfig) {
     collectionApi.getFilteredByGlob("src/dev/*.md").reverse(),
   );
 
-  // Mixed feed for homepage: notes + photos + cartoon + reading + dev, sorted newest first
+  // Mixed feed for homepage: notes + photos + overherd + reading + dev, sorted newest first
   eleventyConfig.addCollection("feed", (collectionApi) => {
     const notes = collectionApi.getFilteredByGlob("src/notes/*.md");
     const photos = collectionApi.getFilteredByGlob("src/photos/*.md");
-    const cartoon = collectionApi.getFilteredByGlob("src/cartoon/*.md");
+    const overherd = collectionApi.getFilteredByGlob("src/overherd/*.md");
     const reading = collectionApi.getFilteredByGlob("src/reading/*.md");
     const dev = collectionApi.getFilteredByGlob("src/dev/*.md");
-    return [...notes, ...photos, ...cartoon, ...reading, ...dev].sort(
+    return [...notes, ...photos, ...overherd, ...reading, ...dev].sort(
       (a, b) => b.date - a.date,
     );
   });
